@@ -48,31 +48,6 @@ const offerings = [
   },
 ];
 
-const methodology = [
-  {
-    title: "Diagnose first",
-    copy:
-      "We identify whether the real bottleneck is content knowledge, pacing, confidence, or study habits so the work stays focused.",
-  },
-  {
-    title: "Teach the why",
-    copy:
-      "Students should understand why an approach works, not just memorize a procedure long enough to survive one test.",
-  },
-  {
-    title: "Build independence",
-    copy:
-      "The goal is calmer test-taking, clearer writing, and stronger decision-making when students are working on their own.",
-  },
-];
-
-const freeTips = [
-  "Keep a short error log: what went wrong, why it happened, and what clue you missed.",
-  "For reading sections, summarize each paragraph in a few words before looking at the questions.",
-  "For math, re-solve missed problems from memory the next day instead of only rereading the solution.",
-  "For essays, fix argument structure before polishing sentences.",
-];
-
 export const metadata = {
   title: "Services | Yaxin Zhang Tutoring",
   description: "SAT, AP, math, English, essay writing, and music tutoring services.",
