@@ -24,8 +24,7 @@ export default function ContactPage() {
 
         <div className="page-intro contact-intro">
           <div>
-            <p className="eyebrow">Contact</p>
-            <h1 className="page-title">Contact Me About Tutoring in Arlington, MA</h1>
+            <h1 className="page-title">Contact Me</h1>
             <p className="page-copy">
               Tell me a little about your student, the subject or test they need help with, and
               whether you prefer in-person tutoring in Arlington or online sessions. I&apos;ll reply
@@ -50,7 +49,12 @@ export default function ContactPage() {
               <h3>How sessions work</h3>
               <p>
                 Most sessions are one hour. We can meet at Robbins Library, another public
-                Arlington location, or online.
+                Arlington location, or online. I offer tutoring for middle and high school students in Arlington, MA, including
+                SAT prep, writing support, math tutoring, AP course support, study skills, and
+                college essay planning.
+                In-person sessions are available at Robbins Library or another public location in
+                Arlington, with online tutoring available for students in Belmont, Lexington,
+                Cambridge, and the Greater Boston area.
               </p>
             </div>
             <div className="mini-card">
@@ -60,39 +64,6 @@ export default function ContactPage() {
                 reschedules when possible.
               </p>
             </div>
-          </aside>
-        </section>
-
-        <section className="split-layout roomy-split">
-          <article className="service-box">
-            <div className="section-heading">
-              <p className="eyebrow">Local Tutoring in Arlington, MA</p>
-              <h2>In-person in Arlington, with online options nearby</h2>
-            </div>
-            <div className="mini-stack">
-              <p>
-                I offer tutoring for middle and high school students in Arlington, MA, including
-                SAT prep, writing support, math tutoring, AP course support, study skills, and
-                college essay planning.
-              </p>
-              <p>
-                In-person sessions are available at Robbins Library or another public location in
-                Arlington, with online tutoring available for students in Belmont, Lexington,
-                Cambridge, and the Greater Boston area.
-              </p>
-            </div>
-          </article>
-
-          <aside className="contact-box">
-            <div className="section-heading">
-              <p className="eyebrow">Good Fit for Students Who...</p>
-              <h2>Need clear, practical support</h2>
-            </div>
-            <ul className="bullet-list">
-              {fitPoints.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
           </aside>
         </section>
       </section>
