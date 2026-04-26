@@ -254,26 +254,6 @@ Okay, but who am I?
           </article>
         </section>
 
-        <section className="service-box roomy-split">
-          <div className="section-heading">
-            <p className="eyebrow">Local Tutoring in Arlington, MA</p>
-            <h2>In-person at Robbins Library or online for nearby families</h2>
-          </div>
-          <div className="mini-stack">
-            <p>
-              I offer tutoring in Arlington, MA, with in-person sessions available at Robbins
-              Library or another public location. If you are looking for a Robbins Library tutor
-              for after-school or weekend support, that is often the easiest setup for Arlington
-              families.
-            </p>
-            <p>
-              I can also work with students from nearby Belmont, Lexington, Cambridge, and the
-              Boston area online. That makes it easier for families to get steady support without
-              turning tutoring into another complicated commute.
-            </p>
-          </div>
-        </section>
-
         <section className="roomy-split">
           <div className="section-heading">
             <p className="eyebrow">FAQ</p>
@@ -287,22 +267,6 @@ Okay, but who am I?
                 <p>{faq.answer}</p>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="contact-box roomy-split">
-          <div className="section-heading">
-            <p className="eyebrow">Get Started</p>
-            <h2>Schedule a free intro call</h2>
-            <p>
-              Share your student&apos;s grade, subject, current challenges, and whether you prefer
-              meeting at Robbins Library or online.
-            </p>
-          </div>
-          <div className="hero-actions">
-            <Link className="button button-dark" href="/contact">
-              <span>Contact me about tutoring</span>
-            </Link>
           </div>
         </section>
       </section>
