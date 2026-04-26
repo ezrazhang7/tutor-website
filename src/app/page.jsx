@@ -38,7 +38,6 @@ export default function HomePage() {
       </div>
 
       <section className="stage-panel" id="about">
-        <h1 className="stage-title">Study Smarter</h1>
 
         <header className="stage-nav">
           <p className="brand-name">Yaxin Zhang</p>
@@ -60,21 +59,22 @@ export default function HomePage() {
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <div className="hello-chip">Hi, I&apos;m Yaxin</div>
+            <div className="angle-badge">
+              <span>Hi, I&apos;m Yaxin</span>
+            </div>
 
             <h2 className="hero-name">
-              <span>Tutoring</span>
-              <span>That Clicks</span>
+              <span>Yaxin!</span><div className="italics">(yak-sin)</div>
             </h2>
 
             <p className="hero-text">
-              I help students build confidence in <span className="highlight">SAT prep</span>,
-              AP classes, math, reading, and writing with calm structure and clear feedback.
+              I help students build <span className="highlight">confidence</span> across SAT prep,
+              AP classes, Kumon/RSM enrichment programs, and college essay writing.
             </p>
 
             <div className="hero-actions">
               <Link className="button button-dark" href="/services">
-                <span>See Services</span>
+                <span>View Services</span>
                 <Image src="/assets/briefcase.svg" alt="" width={22} height={22} />
               </Link>
 
@@ -110,11 +110,6 @@ export default function HomePage() {
               priority
             />
           </div>
-        </div>
-
-        <div className="angle-badge">
-          <span>Boston + Zoom</span>
-          <Image src="/assets/arrow.png" alt="" width={124} height={122} className="badge-arrow" />
         </div>
       </section>
     </main>
