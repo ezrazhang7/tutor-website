@@ -180,18 +180,8 @@ export default function ServicesPage() {
         <SiteHeader className="page-header" />
 
         <div className="page-intro">
-          <h1 className="page-title">Tutoring that meets students where they actually get stuck</h1>
-          <p className="page-copy">
-            I'm Yaxin, an Arlington grad with a 1560 SAT, strong AP results, and 300+ hours of
-            tutoring experience. I work with middle and high school students in person in
-            Arlington or online.
-          </p>
-          <div className="hero-actions">
-            <Link className="button button-dark" href="/contact">
-              <span>Book a Free Intro Call</span>
-            </Link>
+          <h1 className="page-title">Choose the support that fits best. </h1>
           </div>
-        </div>
 
         <ServicesSelector services={services} />
 
