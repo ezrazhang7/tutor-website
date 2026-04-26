@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "../site-header";
 import ServicesSelector from "./services-selector";
+import { pageMetadata } from "../seo";
 
 const services = [
   {
@@ -180,14 +181,7 @@ export default function ServicesPage() {
             <h2>Questions parents usually ask</h2>
           </div>
 
-          <div className="services-grid">
-            {faqs.map((faq) => (
-              <article className="service-card" key={faq.question}>
-                <h3>{faq.question}</h3>
-                <p>{faq.answer}</p>
-              </article>
-            ))}
-          </div>
+          <FaqAccordion faqs={faqs} />
         </section>
       </section>
     </main>

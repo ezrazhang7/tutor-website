@@ -15,7 +15,9 @@ export default function SiteHeader({ className = "" }) {
   return (
     <header className={headerClassName}>
       <div className="header-start">
-        <p className="brand-name">Yaxin Zhang</p>
+        <Link className="brand-name" href="/">
+          Yaxin Zhang
+        </Link>
       </div>
 
       <nav aria-label="Primary">

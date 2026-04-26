@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "./site-header";
+import { pageMetadata } from "./seo";
 
 const backgroundStars = [
   { alt: "", className: "page-star page-star-top-left", width: 138, height: 138 },
@@ -10,6 +11,13 @@ const backgroundStars = [
   { alt: "", className: "page-star page-star-bottom-mid", width: 132, height: 132 },
   { alt: "", className: "page-star page-star-bottom-right", width: 210, height: 210 },
 ];
+
+export const metadata = pageMetadata({
+  title: "Arlington, MA Tutor for SAT, Math, Writing, AP, and College Essays",
+  description:
+    "Private tutoring in Arlington, MA and online for SAT prep, math, AP coursework, academic writing, and college essays.",
+  path: "/",
+});
 
 export default function HomePage() {
   return (
@@ -41,14 +49,19 @@ export default function HomePage() {
               <span>Hello, my name is</span>
             </div>
 
-            <h2 className="hero-name">
+            <h1 className="hero-name">
               <span>Yaxin!</span>
               <span className="italics">(yak-sin)</span>
-            </h2>
+            </h1>
 
             <p className="hero-text">
               I help students build <span className="highlight">confidence</span> across SAT prep,
               AP classes, Kumon/RSM enrichment programs, and college essay writing.
+            </p>
+
+            <p className="hero-proof">
+              Based in Arlington, Massachusetts. In-person sessions at Robbins Library or online
+              support for families across Greater Boston.
             </p>
 
             <div className="hero-actions">

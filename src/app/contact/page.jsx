@@ -1,5 +1,6 @@
 import ContactForm from "./contact-form";
 import SiteHeader from "../site-header";
+import { pageMetadata } from "../seo";
 
 const fitPoints = [
   "Need structure before a major test or deadline",
@@ -8,11 +9,12 @@ const fitPoints = [
   "Benefit from a near-peer tutor who recently went through the same process",
 ];
 
-export const metadata = {
-  title: "Contact Yaxin Zhang | Arlington MA Tutor for SAT, Writing, Math & College Essays",
+export const metadata = pageMetadata({
+  title: "Contact Yaxin Zhang for Tutoring in Arlington, MA",
   description:
-    "Contact Yaxin Zhang for local tutoring in Arlington, MA. SAT prep, writing tutoring, math support, AP courses, study skills, and college essay planning for middle and high school students.",
-};
+    "Get in touch about SAT prep, math tutoring, academic writing, AP support, college essays, and music lessons in Arlington, MA or online.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
@@ -23,15 +25,7 @@ export default function ContactPage() {
         <SiteHeader className="page-header" />
 
         <div className="page-intro contact-intro">
-          <div>
             <h1 className="page-title">Contact Me</h1>
-            <p className="page-copy">
-              Tell me a little about your student, the subject or test they need help with, and
-              whether you prefer in-person tutoring in Arlington or online sessions. I&apos;ll reply
-              with next steps.
-            </p>
-            <p className="page-copy">No polished request needed. A few sentences is enough.</p>
-          </div>
         </div>
 
         <section className="contact-layout">
