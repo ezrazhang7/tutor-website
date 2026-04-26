@@ -168,6 +168,20 @@ img {
   margin-bottom: 40px;
 }
 
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.header-start {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
 .brand-name {
   margin: 0;
   font-family: var(--font-heading);
@@ -422,6 +436,14 @@ img {
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 34px;
+}
+
+.resume-button {
+  flex-shrink: 0;
+}
+
+.header-cta {
+  flex-shrink: 0;
 }
 
 .page-intro {
@@ -902,6 +924,10 @@ img {
     flex-wrap: wrap;
   }
 
+  .site-header {
+    flex-wrap: wrap;
+  }
+
   .nav-list {
     gap: 20px;
     flex-wrap: wrap;
@@ -1004,6 +1030,16 @@ img {
     margin-bottom: 24px;
   }
 
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .header-start {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
   .brand-name {
     font-size: 1rem;
   }
@@ -1018,6 +1054,10 @@ img {
     width: 100%;
     min-height: 54px;
     font-size: 1rem;
+  }
+
+  .site-header .button-small {
+    width: auto;
   }
 
   .hero-text {

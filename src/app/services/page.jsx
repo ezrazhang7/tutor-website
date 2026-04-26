@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SiteHeader from "../site-header";
 
 const services = [
   {
@@ -159,27 +160,7 @@ export default function ServicesPage() {
       />
 
       <section className="content-panel page-panel">
-        <header className="page-header">
-          <p className="brand-name">Yaxin Zhang</p>
-
-          <nav aria-label="Primary">
-            <ul className="nav-list">
-              <li>
-                <Link href="/#about">About</Link>
-              </li>
-              <li>
-                <Link href="/services">Services</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
-              </li>
-            </ul>
-          </nav>
-
-          <Link className="button button-dark button-small" href="/contact">
-            <span>Contact Me</span>
-          </Link>
-        </header>
+        <SiteHeader className="page-header" ctaHref="/contact" ctaLabel="Contact Me" />
 
         <div className="page-intro">
           <p className="eyebrow">Services</p>

@@ -1,11 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
-];
+import SiteHeader from "./site-header";
 
 const backgroundStars = [
   { alt: "", className: "page-star page-star-top-left", width: 138, height: 138 },
@@ -38,24 +33,7 @@ export default function HomePage() {
       </div>
 
       <section className="stage-panel" id="about">
-
-        <header className="stage-nav">
-          <p className="brand-name">Yaxin Zhang</p>
-
-          <nav aria-label="Primary">
-            <ul className="nav-list">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <Link className="button button-dark button-small" href="/contact">
-            <span>Book a Session</span>
-          </Link>
-        </header>
+        <SiteHeader className="stage-nav" ctaHref="/contact" ctaLabel="Book a Session" />
 
         <div className="hero-grid">
           <div className="hero-copy">
