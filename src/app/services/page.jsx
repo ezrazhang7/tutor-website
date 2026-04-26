@@ -96,53 +96,20 @@ const services = [
   },
 ];
 
-const studentTypes = [
-  "Middle school students building stronger math and writing foundations",
-  "High school students preparing for AP exams, the SAT, and harder coursework",
-  "Rising seniors starting college essays before deadlines get close",
-  "Students in enrichment programs who need extra explanation or reinforcement",
-  "Students who are capable but overwhelmed, disorganized, or unsure where to start",
-];
-
-const reasonsToWorkTogether = [
-  "Local Arlington tutor who can meet in person at Robbins Library or another public location",
-  "Near-peer perspective from a current Arlington high school senior who recently went through the same process",
-  "Recent SAT, AP, and writing experience, including a 1560 SAT score and hands-on test-prep background",
-  "College essay support grounded in current experience; I'll be attending UNC Chapel Hill in the fall",
-  "Patient, structured, practical sessions that focus on the next steps a student can actually use",
-  "Online flexibility for families who want consistent support without needing to coordinate travel",
-];
-
 const faqs = [
   {
-    question: "Do you offer in-person tutoring in Arlington?",
+    question: "What are your credentials, and why should I choose you as a tutor?",
     answer:
-      "Yes. I offer tutoring in Arlington, MA, and can meet students at Robbins Library or another public location. Online sessions are also available.",
-  },
+      "I’m a current Arlington high school senior with a 1560 SAT score and experience tutoring peers in SAT prep, writing, and math. I’m also a UNC Chapel Hill admit with experience supporting college essay writing. I offer patient, structured, practical sessions that focus on the next steps a student can actually use, with the flexibility of online or in-person tutoring.",},
   {
     question: "What subjects do you tutor?",
     answer:
-      "I tutor SAT prep, writing and essay writing, middle school math, high school math, AP coursework and exam prep, college essays, and study skills.",
+      "Lots. I specialize in SAT preparation, middle school & high school math, AP coursework instruction AP coursework and exam prep, college essays, and study skills.",
   },
   {
-    question: "Do you help with SAT prep?",
-    answer:
-      "Yes. I help students prepare for both SAT Math and SAT Reading and Writing with diagnostic review, practice analysis, pacing work, and question strategy.",
-  },
-  {
-    question: "Do you help with college essays?",
-    answer:
-      "Yes. I help rising seniors brainstorm topics, plan drafts, revise structure, and strengthen voice for personal statements and supplemental essays.",
-  },
-  {
-    question: "Can you help students in Kumon, RSM, or other enrichment programs?",
+    question: "Can you help my middle/high schooler in Kumon, RSM, or other enrichment programs?",
     answer:
       "Yes. I often help students who are doing enrichment work but need clearer explanations, reinforcement, or help connecting the material to school math.",
-  },
-  {
-    question: "Do you tutor middle school students?",
-    answer:
-      "Yes. I work with middle school students, especially in math, writing, study skills, and general academic support.",
   },
   {
     question: "What are your rates, and how do families get started?",
@@ -193,59 +160,14 @@ export default function ServicesPage() {
             I help middle and high school students build stronger skills, clearer study plans, and
             more confidence through personalized tutoring in Arlington and online.
           </p>
-          <p className="page-copy">
-            Most families reach out for one of six things: SAT prep, writing support, math help,
-            AP coursework, college essays, or study skills. The layout below lets you compare them
-            without forcing six oversized cards on the page.
-          </p>
           <div className="hero-actions">
             <Link className="button button-dark" href="/contact">
-              <span>Book a Free Intro Call</span>
+              <span>Forms make your skin crawl? Book a Free Intro Call</span>
             </Link>
           </div>
         </div>
 
         <ServicesSelector services={services} />
-
-        <section className="service-box roomy-split">
-          <div className="section-heading">
-            <h2>Tell me what your student needs help with</h2>
-            <p>
-              If you are looking for a SAT tutor, writing tutor, math tutor, AP tutor, or college
-              essay tutor in Arlington, MA, send me a quick note with the grade level, subject, and
-              current goals.
-            </p>
-          </div>
-          <div className="hero-actions">
-            <Link className="button button-dark" href="/contact">
-              <span>Contact Me</span>
-            </Link>
-          </div>
-        </section>
-
-        <section className="split-layout roomy-split">
-          <article className="service-box">
-            <div className="section-heading">
-              <h2>Students who need clearer direction and stronger follow-through</h2>
-            </div>
-            <ul className="bullet-list">
-              {studentTypes.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-
-          <article className="contact-box">
-            <div className="section-heading">
-              <h2>Local, recent, and practical tutoring</h2>
-            </div>
-            <ul className="bullet-list">
-              {reasonsToWorkTogether.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-        </section>
 
         <section className="roomy-split">
           <div className="section-heading">
