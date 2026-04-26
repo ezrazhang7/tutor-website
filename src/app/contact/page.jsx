@@ -1,9 +1,17 @@
 import Link from "next/link";
 import ContactForm from "./contact-form";
 
+const fitPoints = [
+  "Need structure before a major test or deadline",
+  "Want stronger writing, clearer essays, or better study habits",
+  "Are preparing for the SAT, AP courses, or college essays",
+  "Benefit from a near-peer tutor who recently went through the same process",
+];
+
 export const metadata = {
-  title: "Contact | Yaxin Zhang Tutoring",
-  description: "Get in touch about tutoring sessions, rates, scheduling, and location preferences.",
+  title: "Contact Yaxin Zhang | Arlington MA Tutor for SAT, Writing, Math & College Essays",
+  description:
+    "Contact Yaxin Zhang for local tutoring in Arlington, MA. SAT prep, writing tutoring, math support, AP courses, study skills, and college essay planning for middle and high school students.",
 };
 
 export default function ContactPage() {
@@ -37,11 +45,13 @@ export default function ContactPage() {
         <div className="page-intro contact-intro">
           <div>
             <p className="eyebrow">Contact</p>
-            <h1 className="page-title">Tell me what kind of support your student needs.</h1>
+            <h1 className="page-title">Contact Me About Tutoring in Arlington, MA</h1>
             <p className="page-copy">
-              This page is set up as a fuller intake experience so parents can share the right level,
-              subject area, schedule preferences, and goals up front.
+              Tell me a little about your student, the subject or test they need help with, and
+              whether you prefer in-person tutoring in Arlington or online sessions. I&apos;ll reply
+              with next steps.
             </p>
+            <p className="page-copy">No polished request needed. A few sentences is enough.</p>
           </div>
         </div>
 
@@ -51,16 +61,56 @@ export default function ContactPage() {
           <aside className="contact-detail-stack">
             <div className="mini-card">
               <h3>What to include</h3>
-              <p>Grade level, target exam or course, current pain points, and whether in-person or Zoom is easier.</p>
+              <p>
+                Grade level, subject or test, current challenge, and whether you prefer in-person
+                or online tutoring.
+              </p>
             </div>
             <div className="mini-card">
-              <h3>Policies</h3>
-              <p>Sessions are $50/hour. Please give 24 hours notice for cancellations or reschedules.</p>
+              <h3>How sessions work</h3>
+              <p>
+                Most sessions are one hour. We can meet at Robbins Library, another public
+                Arlington location, or online.
+              </p>
             </div>
             <div className="mini-card">
-              <h3>Location preference</h3>
-              <p>Boston or Greater Boston is ideal for in-person sessions, but Zoom is always available.</p>
+              <h3>Rate and policies</h3>
+              <p>
+                Sessions are $50/hour. Please give 24 hours&apos; notice for cancellations or
+                reschedules when possible.
+              </p>
             </div>
+          </aside>
+        </section>
+
+        <section className="split-layout roomy-split">
+          <article className="service-box">
+            <div className="section-heading">
+              <p className="eyebrow">Local Tutoring in Arlington, MA</p>
+              <h2>In-person in Arlington, with online options nearby</h2>
+            </div>
+            <p>
+              I offer tutoring for middle and high school students in Arlington, MA, including SAT
+              prep, writing support, math tutoring, AP course support, study skills, and college
+              essay planning.
+            </p>
+            <p>
+              In-person sessions are available at Robbins Library or another public location in
+              Arlington, with online tutoring available for students in Belmont, Lexington,
+              Cambridge, and the Greater Boston area.
+            </p>
+          </article>
+
+          <aside className="contact-box">
+            <div className="section-heading">
+              <p className="eyebrow">Good Fit for Students Who...</p>
+              <h2>Need clear, practical support</h2>
+            </div>
+            <ul className="bullet-list">
+              {fitPoints.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </aside>
         </section>
       </section>

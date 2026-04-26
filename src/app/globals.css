@@ -672,7 +672,7 @@ img {
 .contact-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-  gap: 24px;
+  gap: 28px;
   align-items: start;
 }
 
@@ -681,6 +681,13 @@ img {
   background: var(--color-paper);
   box-shadow: var(--shadow-md);
   padding: 28px;
+}
+
+.form-intro {
+  margin: 0 0 24px;
+  max-width: 760px;
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .intake-form.is-submitting {
@@ -698,18 +705,30 @@ img {
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 22px 18px;
 }
 
 .field {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
-.field span {
+.field span,
+.compact-fieldset legend {
   font-family: var(--font-heading);
   font-size: 0.98rem;
   font-weight: 800;
+}
+
+.compact-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.compact-fieldset legend {
+  margin-bottom: 10px;
+  padding: 0;
 }
 
 .field input,
@@ -724,6 +743,11 @@ img {
   padding: 14px 16px;
   outline: none;
   box-shadow: 4px 4px 0 var(--color-outline);
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 .field input:focus,
@@ -750,6 +774,10 @@ img {
   gap: 12px;
 }
 
+.compact-check-grid {
+  gap: 10px;
+}
+
 .check-pill {
   display: inline-flex;
   align-items: center;
@@ -760,6 +788,12 @@ img {
   background: #fff6c2;
   box-shadow: 4px 4px 0 var(--color-outline);
   font-weight: 700;
+}
+
+.compact-check-pill {
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  line-height: 1.2;
 }
 
 .check-pill input {

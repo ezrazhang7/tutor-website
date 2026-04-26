@@ -60,8 +60,7 @@ export default function HomePage() {
         <div className="hero-grid">
           <div className="hero-copy">
             <div className="angle-badge">
-              <span>Hi, I&apos;m Yaxin</span>
-              <Image src="/assets/arrow.png" alt="" width={86} height={84} className="badge-arrow" />
+              <span>Hello, my name is</span>
             </div>
 
             <h2 className="hero-name">
