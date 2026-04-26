@@ -52,25 +52,25 @@ const methodology = [
   {
     title: "Diagnose first",
     copy:
-      "We start by finding the actual bottleneck: content gaps, timing, confidence, or study habits. That keeps sessions focused instead of generic.",
+      "We identify whether the real bottleneck is content knowledge, pacing, confidence, or study habits so the work stays focused.",
   },
   {
-    title: "Practice with feedback",
+    title: "Teach the why",
     copy:
-      "Students work actively during the session. I explain why an approach works, where it breaks, and how to recognize the pattern next time.",
+      "Students should understand why an approach works, not just memorize a procedure long enough to survive one test.",
   },
   {
     title: "Build independence",
     copy:
-      "The target is not dependency on a tutor. It is calmer test-taking, cleaner writing, and better judgment when students work alone.",
+      "The goal is calmer test-taking, clearer writing, and stronger decision-making when students are working on their own.",
   },
 ];
 
 const freeTips = [
-  "Keep a short error log: what went wrong, why it happened, and what signal you missed.",
-  "For reading sections, summarize each paragraph in a few words before answering questions.",
-  "For math, redo missed problems from memory a day later instead of just reviewing the solution.",
-  "For essays, revise for structure before sentence polish.",
+  "Keep a short error log: what went wrong, why it happened, and what clue you missed.",
+  "For reading sections, summarize each paragraph in a few words before looking at the questions.",
+  "For math, re-solve missed problems from memory the next day instead of only rereading the solution.",
+  "For essays, fix argument structure before polishing sentences.",
 ];
 
 export const metadata = {
@@ -112,7 +112,7 @@ export default function ServicesPage() {
           <nav aria-label="Primary">
             <ul className="nav-list">
               <li>
-                <Link href="/">Home</Link>
+                <Link href="/#about">About</Link>
               </li>
               <li>
                 <Link href="/services">Services</Link>

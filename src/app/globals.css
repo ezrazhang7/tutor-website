@@ -24,6 +24,16 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 body {
@@ -225,6 +235,15 @@ img {
   font-weight: 900;
 }
 
+.italics {
+  display: block;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.36em;
+  letter-spacing: -0.02em;
+  margin-top: 6px;
+}
+
 .hero-text {
   max-width: 630px;
   margin: 0;
@@ -324,30 +343,31 @@ img {
 }
 
 .angle-badge {
-  position: absolute;
-  right: 170px;
-  bottom: -56px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 470px;
-  padding: 16px 34px;
-  border: var(--border-heavy);
-  border-radius: 28px;
-  background: #fff07e;
-  box-shadow: var(--shadow-md);
+  position: relative;
+  width: fit-content;
+  min-width: 0;
+  margin: 0 0 22px;
+  padding: 14px 74px 14px 28px;
+  border: 4px solid var(--color-outline);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  box-shadow: 6px 6px 0 var(--color-outline);
   color: var(--color-outline);
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 900;
   line-height: 1;
-  transform: rotate(-5deg);
+  transform: rotate(-6deg);
 }
 
 .badge-arrow {
   position: absolute;
-  right: -18px;
-  bottom: -30px;
-  width: 124px;
+  right: -6px;
+  bottom: -22px;
+  width: 86px;
   height: auto;
   transform: rotate(7deg);
 }
@@ -662,6 +682,18 @@ img {
   padding: 28px;
 }
 
+.intake-form.is-submitting {
+  position: relative;
+}
+
+.intake-form.is-submitting::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 239, 228, 0.68);
+  pointer-events: none;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -703,6 +735,14 @@ img {
   grid-column: 1 / -1;
 }
 
+.bot-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .check-grid {
   display: flex;
   flex-wrap: wrap;
@@ -738,6 +778,68 @@ img {
   margin: 0;
   font-size: 0.96rem;
   line-height: 1.5;
+}
+
+.loading-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-dots {
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+
+.loading-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: currentColor;
+  animation: bounce-dot 900ms infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.loading-dots.is-active {
+  display: inline-flex;
+}
+
+.form-status {
+  min-height: 24px;
+}
+
+.form-status-success {
+  color: #125d23;
+}
+
+.form-status-error {
+  color: #9d1e12;
+}
+
+.form-status-loading {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+}
+
+@keyframes bounce-dot {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0.7;
+  }
+
+  40% {
+    transform: translateY(-5px) scale(1);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -797,10 +899,10 @@ img {
   }
 
   .angle-badge {
-    right: 50%;
-    bottom: -48px;
-    min-width: min(92%, 480px);
-    transform: translateX(50%) rotate(-4deg);
+    margin-bottom: 20px;
+    padding-right: 68px;
+    font-size: 1rem;
+    transform: rotate(-5deg);
   }
 
   .info-strip,
@@ -919,15 +1021,15 @@ img {
   }
 
   .angle-badge {
-    min-width: 92%;
-    padding: 14px 18px;
-    font-size: 1.65rem;
+    margin-bottom: 18px;
+    padding: 12px 58px 12px 20px;
+    font-size: 0.92rem;
   }
 
   .badge-arrow {
-    width: 88px;
-    right: -6px;
-    bottom: -20px;
+    width: 72px;
+    right: -10px;
+    bottom: -18px;
   }
 
   .info-strip {

@@ -61,10 +61,12 @@ export default function HomePage() {
           <div className="hero-copy">
             <div className="angle-badge">
               <span>Hi, I&apos;m Yaxin</span>
+              <Image src="/assets/arrow.png" alt="" width={86} height={84} className="badge-arrow" />
             </div>
 
             <h2 className="hero-name">
-              <span>Yaxin!</span><div className="italics">(yak-sin)</div>
+              <span>Yaxin!</span>
+              <span className="italics">(yak-sin)</span>
             </h2>
 
             <p className="hero-text">
