@@ -17,10 +17,6 @@ export default function HomePage() {
       <HomeStartupScroll targetId="about" />
       <div className="dot-grid" />
 
-      <div className="top-mark">
-        <Image src="/assets/top.png" alt="Yaxin Zhang mark" width={120} height={62} />
-      </div>
-
       <section className="stage-panel home-stage-panel" id="about">
         <SiteHeader className="stage-nav" />
 
