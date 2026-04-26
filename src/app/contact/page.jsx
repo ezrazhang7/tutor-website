@@ -2,13 +2,6 @@ import ContactForm from "./contact-form";
 import SiteHeader from "../site-header";
 import { pageMetadata } from "../seo";
 
-const fitPoints = [
-  "Need structure before a major test or deadline",
-  "Want stronger writing, clearer essays, or better study habits",
-  "Are preparing for the SAT, AP courses, or college essays",
-  "Benefit from a near-peer tutor who recently went through the same process",
-];
-
 export const metadata = pageMetadata({
   title: "Contact Yaxin Zhang for Tutoring in Arlington, MA",
   description:
