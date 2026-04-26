@@ -16,6 +16,7 @@ const SUBJECT_OPTIONS = [
 ];
 
 const SCRIPT_URL = process.env.NEXT_PUBLIC_CONTACT_SCRIPT_URL || "";
+const FORM_VERSION = "v3";
 
 export default function ContactForm() {
   const formRef = useRef(null);
@@ -39,7 +40,8 @@ export default function ContactForm() {
     const form = formRef.current;
     const formData = new FormData(form);
     formData.set("formStartedAt", String(startTimeRef.current));
-    formData.set("formVersion", "v2");
+    formData.set("formVersion", FORM_VERSION);
+    formData.set("sourcePath", window.location.pathname);
 
     setStatus("loading");
     setMessage("Sending your inquiry...");
@@ -47,6 +49,9 @@ export default function ContactForm() {
     try {
       const response = await fetch(SCRIPT_URL, {
         method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
         body: new URLSearchParams(formData),
       });
 
@@ -73,7 +78,7 @@ export default function ContactForm() {
       ref={formRef}
     >
       <input type="hidden" name="formStartedAt" value={String(startTimeRef.current)} readOnly />
-      <input type="hidden" name="formVersion" value="v2" readOnly />
+      <input type="hidden" name="formVersion" value={FORM_VERSION} readOnly />
 
       <div className="bot-trap" aria-hidden="true">
         <label htmlFor="website">Leave this field empty</label>

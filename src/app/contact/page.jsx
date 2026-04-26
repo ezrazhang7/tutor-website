@@ -42,11 +42,7 @@ export default function ContactPage() {
             <div className="mini-card">
               <h3>How sessions work</h3>
               <p>
-                Most sessions are one hour. We can meet at Robbins Library, another public
-                Arlington location, or online. I offer tutoring for middle and high school students in Arlington, MA, including
-                SAT prep, writing support, math tutoring, AP course support, study skills, and
-                college essay planning.
-                In-person sessions are available at Robbins Library or another public location in
+                Most sessions are one hour. In-person sessions are available at Robbins Library or another public location in
                 Arlington, with online tutoring available for students in Belmont, Lexington,
                 Cambridge, and the Greater Boston area.
               </p>

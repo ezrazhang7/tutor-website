@@ -21,7 +21,7 @@ export const metadata = pageMetadata({
 
 export default function HomePage() {
   return (
-    <main className="site-shell">
+    <main className="site-shell home-shell">
       <div className="dot-grid" />
 
       {backgroundStars.map((star) => (
@@ -40,7 +40,7 @@ export default function HomePage() {
         <Image src="/assets/top.png" alt="Yaxin Zhang mark" width={120} height={62} />
       </div>
 
-      <section className="stage-panel" id="about">
+      <section className="stage-panel home-stage-panel" id="about">
         <SiteHeader className="stage-nav" />
 
         <div className="hero-grid">

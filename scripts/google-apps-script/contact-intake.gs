@@ -1,11 +1,26 @@
 const CONFIG = {
-  adminEmail: "your-email@example.com",
   sheetName: "Tutoring Leads",
   timezone: Session.getScriptTimeZone() || "America/New_York",
   minSubmitDelayMs: 4000,
   maxSubmitAgeMs: 1000 * 60 * 60 * 12,
   maxFieldLength: 4000,
   rateLimitSeconds: 180,
+  expectedFormVersion: "v3",
+  fieldOrder: [
+    "submittedAt",
+    "formVersion",
+    "sourcePath",
+    "name",
+    "email",
+    "phone",
+    "grade",
+    "subjects",
+    "format",
+    "targetDate",
+    "helpNeeded",
+    "availability",
+    "formStartedAt",
+  ],
 };
 
 function doGet() {
@@ -79,7 +94,15 @@ function parseSubmission_(e) {
 }
 
 function validateSubmission_(submission) {
-  const required = ["name", "email", "formStartedAt"];
+  const required = [
+    "name",
+    "email",
+    "grade",
+    "helpNeeded",
+    "availability",
+    "formStartedAt",
+    "formVersion",
+  ];
 
   required.forEach((field) => {
     if (!submission[field]) {
@@ -89,6 +112,10 @@ function validateSubmission_(submission) {
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(submission.email)) {
     throw new Error("Invalid email address.");
+  }
+
+  if (submission.formVersion !== CONFIG.expectedFormVersion) {
+    throw new Error("Outdated form version. Please refresh the page and try again.");
   }
 }
 
@@ -128,14 +155,15 @@ function appendToSheet_(submission) {
   const submissionKeys = Object.keys(submission);
 
   if (headers.length === 0) {
-    sheet.getRange(1, 1, 1, submissionKeys.length).setValues([submissionKeys]);
-    sheet.getRange(2, 1, 1, submissionKeys.length).setValues([
-      submissionKeys.map((key) => submission[key]),
+    const preferredHeaders = buildHeaders_(submissionKeys);
+    sheet.getRange(1, 1, 1, preferredHeaders.length).setValues([preferredHeaders]);
+    sheet.getRange(2, 1, 1, preferredHeaders.length).setValues([
+      preferredHeaders.map((key) => submission[key] || ""),
     ]);
     return;
   }
 
-  const mergedHeaders = headers.slice();
+  const mergedHeaders = buildHeaders_(headers.concat(submissionKeys));
   submissionKeys.forEach((key) => {
     if (mergedHeaders.indexOf(key) === -1) {
       mergedHeaders.push(key);
@@ -151,12 +179,13 @@ function appendToSheet_(submission) {
 }
 
 function sendNotification_(submission) {
+  const notificationEmail = getNotificationEmail_();
   const subject = "New tutoring inquiry from " + submission.name;
   const lines = Object.keys(submission).map((key) => key + ": " + submission[key]);
   const html = buildHtmlEmail_(submission);
 
   MailApp.sendEmail({
-    to: CONFIG.adminEmail,
+    to: notificationEmail,
     replyTo: submission.email,
     subject: subject,
     body: lines.join("\n"),
@@ -218,6 +247,24 @@ function appendFlexibleValue_(baseValue, newValue) {
   }
 
   return baseValue + ", " + newValue;
+}
+
+function buildHeaders_(keys) {
+  const uniqueKeys = Array.from(new Set(keys));
+  const orderedKeys = CONFIG.fieldOrder.filter((key) => uniqueKeys.indexOf(key) !== -1);
+  const extraKeys = uniqueKeys.filter((key) => CONFIG.fieldOrder.indexOf(key) === -1);
+
+  return orderedKeys.concat(extraKeys);
+}
+
+function getNotificationEmail_() {
+  const ownerEmail = Session.getEffectiveUser().getEmail();
+
+  if (ownerEmail) {
+    return ownerEmail;
+  }
+
+  throw new Error("Notification email is not configured for this script.");
 }
 
 function normalizeKey_(value) {
