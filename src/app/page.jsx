@@ -95,8 +95,8 @@ export default function HomePage() {
             </h1>
 
             <p className="hero-text">
-              I <span className="highlight">support </span> middle and high school students across many areas: 
-              SAT tutoring, AP exam prep, enrichment programs like Kumon/RSM, not to mention college essay drafting.
+              I <span className="highlight">support </span> middle and high school students across 
+              SAT tutoring, AP exam prep, Kumon/RSM enrichment learning, and college essay drafting.
             </p>
 
             <div className="hero-actions">
@@ -140,7 +140,7 @@ export default function HomePage() {
         </div>
 
         <div className="angle-badge">
-          <span>Neobrutalism</span>
+          <span>Arlington, MA</span>
           <Image src="/assets/arrow.png" alt="" width={124} height={122} className="badge-arrow" />
         </div>
       </section>
