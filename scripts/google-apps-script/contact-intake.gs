@@ -6,6 +6,22 @@ const CONFIG = {
   maxFieldLength: 4000,
   rateLimitSeconds: 180,
   expectedFormVersion: "v3",
+  acceptedFields: [
+    "formVersion",
+    "formStartedAt",
+    "sourcePath",
+    "name",
+    "email",
+    "phone",
+    "grade",
+    "subjects",
+    "format",
+    "targetDate",
+    "helpNeeded",
+    "availability",
+    "website",
+    "confirmationField",
+  ],
   fieldOrder: [
     "submittedAt",
     "formVersion",
@@ -66,8 +82,13 @@ function parseSubmission_(e) {
   const submission = {
     submittedAt: formatNow_(),
   };
+  const acceptedFieldMap = buildFieldMap_(CONFIG.acceptedFields);
 
   Object.keys(single).forEach((key) => {
+    if (!acceptedFieldMap[key]) {
+      return;
+    }
+
     const values = multi[key] || [single[key]];
     const cleaned = values
       .map((value) => String(value || "").trim())
@@ -79,15 +100,6 @@ function parseSubmission_(e) {
       throw new Error("Field too long: " + key);
     }
   });
-
-  // Optional convenience merge for flexible "Other" fields.
-  if (submission.otherSubject) {
-    submission.subjects = appendFlexibleValue_(submission.subjects, "Other: " + submission.otherSubject);
-  }
-
-  if (submission.otherFormat) {
-    submission.format = appendFlexibleValue_(submission.format, "Other: " + submission.otherFormat);
-  }
 
   validateSubmission_(submission);
   return submission;
@@ -241,20 +253,19 @@ function formatNow_() {
   return Utilities.formatDate(new Date(), CONFIG.timezone, "yyyy-MM-dd HH:mm:ss");
 }
 
-function appendFlexibleValue_(baseValue, newValue) {
-  if (!baseValue) {
-    return newValue;
-  }
-
-  return baseValue + ", " + newValue;
-}
-
 function buildHeaders_(keys) {
   const uniqueKeys = Array.from(new Set(keys));
   const orderedKeys = CONFIG.fieldOrder.filter((key) => uniqueKeys.indexOf(key) !== -1);
   const extraKeys = uniqueKeys.filter((key) => CONFIG.fieldOrder.indexOf(key) === -1);
 
   return orderedKeys.concat(extraKeys);
+}
+
+function buildFieldMap_(fields) {
+  return fields.reduce(function (map, field) {
+    map[field] = true;
+    return map;
+  }, {});
 }
 
 function getNotificationEmail_() {
