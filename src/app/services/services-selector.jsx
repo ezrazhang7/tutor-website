@@ -10,13 +10,6 @@ export default function ServicesSelector({ services }) {
 
   return (
     <section className="service-box service-selector">
-      <div className="section-heading compact-section-heading">
-        <p>
-          Start with the area your student needs most right now. The pink tile shows the current
-          focus, and the detail panel below gives the fuller picture without making you read six
-          long cards in a row.
-        </p>
-      </div>
 
       <div className="service-tile-grid" role="tablist" aria-label="Tutoring services">
         {services.map((service) => {

@@ -355,8 +355,8 @@ img {
 
 .globe {
   position: absolute;
-  top: 128px;
-  left: -30px;
+  top: 118px;
+  left: -56px;
   width: 136px;
   height: auto;
   opacity: 0.85;
@@ -1198,8 +1198,8 @@ img {
   }
 
   .globe {
-    top: 76px;
-    left: -18px;
+    top: 72px;
+    left: -36px;
     width: 122px;
   }
 
@@ -1335,8 +1335,8 @@ img {
   .globe {
     width: 96px;
     height: auto;
-    top: 54px;
-    left: -4px;
+    top: 50px;
+    left: -18px;
   }
 
   .mini-star-left {

@@ -154,28 +154,6 @@ export default function ServicesPage() {
       />
       <div className="dot-grid" />
 
-      <Image
-        src="/assets/star.png"
-        alt=""
-        width={150}
-        height={150}
-        className="page-star page-star-top-left"
-      />
-      <Image
-        src="/assets/star.png"
-        alt=""
-        width={110}
-        height={110}
-        className="page-star page-star-top-right"
-      />
-      <Image
-        src="/assets/star.png"
-        alt=""
-        width={180}
-        height={180}
-        className="page-star page-star-bottom-right"
-      />
-
       <section className="content-panel page-panel">
         <SiteHeader className="page-header" />
 
