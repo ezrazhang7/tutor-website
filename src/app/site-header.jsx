@@ -9,17 +9,12 @@ const navItems = [
 
 const resumeHref = "/resume.pdf";
 
-export default function SiteHeader({ ctaHref, ctaLabel, className = "" }) {
+export default function SiteHeader({ className = "" }) {
   const headerClassName = ["site-header", className].filter(Boolean).join(" ");
 
   return (
     <header className={headerClassName}>
       <div className="header-start">
-        <a className="button button-dark button-small resume-button" href={resumeHref} download>
-          <span>Resume</span>
-          <Image src="/assets/download.svg" alt="" width={18} height={18} />
-        </a>
-
         <p className="brand-name">Yaxin Zhang</p>
       </div>
 
@@ -33,9 +28,10 @@ export default function SiteHeader({ ctaHref, ctaLabel, className = "" }) {
         </ul>
       </nav>
 
-      <Link className="button button-dark button-small header-cta" href={ctaHref}>
-        <span>{ctaLabel}</span>
-      </Link>
+      <a className="button button-dark button-small resume-button" href={resumeHref} download>
+        <span>Resume</span>
+        <Image src="/assets/download.svg" alt="" width={18} height={18} />
+      </a>
     </header>
   );
 }

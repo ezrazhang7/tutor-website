@@ -160,13 +160,12 @@ export default function ServicesPage() {
       />
 
       <section className="content-panel page-panel">
-        <SiteHeader className="page-header" ctaHref="/contact" ctaLabel="Contact Me" />
+        <SiteHeader className="page-header" />
 
         <div className="page-intro">
           <p className="eyebrow">Services</p>
           <h1 className="page-title">
-            Tutoring in Arlington, MA for SAT Prep, Writing, Math, AP Courses, and College
-            Essays
+Okay, but who am I?
           </h1>
           <p className="page-copy">
             I help middle and high school students build stronger skills, clearer study plans, and

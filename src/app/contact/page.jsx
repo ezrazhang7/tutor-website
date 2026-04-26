@@ -20,7 +20,7 @@ export default function ContactPage() {
       <div className="dot-grid" />
 
       <section className="content-panel page-panel">
-        <SiteHeader className="page-header" ctaHref="/services" ctaLabel="View Services" />
+        <SiteHeader className="page-header" />
 
         <div className="page-intro contact-intro">
           <div>

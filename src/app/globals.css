@@ -57,7 +57,7 @@ img {
   position: relative;
   overflow: clip;
   min-height: 100vh;
-  padding: 48px 32px 96px;
+  padding: 40px 24px 88px;
   background:
     radial-gradient(circle at top left, rgba(255, 203, 74, 0.45), transparent 28%),
     radial-gradient(circle at bottom right, rgba(255, 153, 0, 0.4), transparent 32%),
@@ -79,7 +79,7 @@ img {
 .top-mark {
   position: absolute;
   top: 46px;
-  right: 72px;
+  right: 48px;
   z-index: 3;
 }
 
@@ -141,7 +141,7 @@ img {
 
 .stage-panel {
   margin-top: 140px;
-  padding: 28px 42px 110px;
+  padding: 28px 30px 104px;
 }
 
 .stage-title {
@@ -178,8 +178,13 @@ img {
 .header-start {
   display: flex;
   align-items: center;
-  gap: 18px;
   min-width: 0;
+}
+
+.site-header nav {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
 }
 
 .brand-name {
@@ -201,6 +206,7 @@ img {
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
+  color: var(--color-accent);
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
@@ -214,7 +220,7 @@ img {
 }
 
 .hero-copy {
-  padding: 28px 0 0 24px;
+  padding: 24px 0 0 8px;
 }
 
 .hello-chip {
@@ -364,7 +370,7 @@ img {
   width: fit-content;
   min-width: 0;
   margin: 0 0 22px;
-  padding: 14px 74px 14px 28px;
+  padding: 14px 24px;
   border: 4px solid var(--color-outline);
   border-radius: var(--radius-pill);
   background: var(--color-accent);
@@ -375,15 +381,6 @@ img {
   font-weight: 900;
   line-height: 1;
   transform: rotate(-6deg);
-}
-
-.badge-arrow {
-  position: absolute;
-  right: -6px;
-  bottom: -22px;
-  width: 86px;
-  height: auto;
-  transform: rotate(7deg);
 }
 
 .info-strip {
@@ -421,13 +418,13 @@ img {
 }
 
 .content-panel {
-  padding: 42px;
+  padding: 42px 32px;
   margin-bottom: 32px;
 }
 
 .page-panel {
   margin-top: 44px;
-  padding: 32px 32px 40px;
+  padding: 32px 24px 40px;
 }
 
 .page-header {
@@ -439,10 +436,6 @@ img {
 }
 
 .resume-button {
-  flex-shrink: 0;
-}
-
-.header-cta {
   flex-shrink: 0;
 }
 
@@ -901,17 +894,21 @@ img {
 
 @media (max-width: 1199px) {
   .site-shell {
-    padding: 34px 22px 88px;
+    padding: 30px 18px 80px;
   }
 
   .top-mark {
     top: 24px;
-    right: 28px;
+    right: 20px;
   }
 
   .stage-panel {
     margin-top: 112px;
-    padding: 26px 26px 108px;
+  }
+
+  .stage-panel,
+  .content-panel {
+    padding: 24px 22px 96px;
   }
 
   .stage-title {
@@ -928,6 +925,10 @@ img {
     flex-wrap: wrap;
   }
 
+  .site-header nav {
+    justify-content: flex-start;
+  }
+
   .nav-list {
     gap: 20px;
     flex-wrap: wrap;
@@ -941,7 +942,7 @@ img {
   }
 
   .hero-copy {
-    padding: 16px 0 0;
+    padding: 16px 0 0 4px;
   }
 
   .hero-art {
@@ -961,7 +962,7 @@ img {
 
   .angle-badge {
     margin-bottom: 20px;
-    padding-right: 68px;
+    padding: 12px 22px;
     font-size: 1rem;
     transform: rotate(-5deg);
   }
@@ -1035,9 +1036,7 @@ img {
   }
 
   .header-start {
-    width: 100%;
-    justify-content: space-between;
-    gap: 12px;
+    width: auto;
   }
 
   .brand-name {
@@ -1097,14 +1096,8 @@ img {
 
   .angle-badge {
     margin-bottom: 18px;
-    padding: 12px 58px 12px 20px;
+    padding: 12px 18px;
     font-size: 0.92rem;
-  }
-
-  .badge-arrow {
-    width: 72px;
-    right: -10px;
-    bottom: -18px;
   }
 
   .info-strip {

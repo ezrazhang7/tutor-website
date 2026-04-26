@@ -33,7 +33,7 @@ export default function HomePage() {
       </div>
 
       <section className="stage-panel" id="about">
-        <SiteHeader className="stage-nav" ctaHref="/contact" ctaLabel="Book a Session" />
+        <SiteHeader className="stage-nav" />
 
         <div className="hero-grid">
           <div className="hero-copy">
