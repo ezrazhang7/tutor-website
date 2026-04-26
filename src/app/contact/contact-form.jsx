@@ -6,10 +6,13 @@ const SUBJECT_OPTIONS = [
   "SAT prep",
   "Writing / English",
   "Math",
-  "AP courses",
+  "AP exam prep",
   "College essays",
-  "Study skills",
-  "Other",
+  "Violin", 
+  "Piano",
+  "STEM", 
+  "Foreign language",
+  "Other (please specify)",
 ];
 
 const SCRIPT_URL = process.env.NEXT_PUBLIC_CONTACT_SCRIPT_URL || "";
