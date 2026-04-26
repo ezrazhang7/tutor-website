@@ -62,14 +62,13 @@ export default function HomePage() {
       ))}
 
       <div className="top-mark">
-        <Image src="/assets/top.png" alt="Sandra Matthews mark" width={120} height={62} />
+        <Image src="/assets/top.png" alt="top mark" width={120} height={62} />
       </div>
 
       <section className="stage-panel" id="about">
-        <h2 className="stage-title">Portfolio Template</h2>
 
         <header className="stage-nav">
-          <p className="brand-name">Sandra Matthews</p>
+          <p className="brand-name">Yaxin Zhang</p>
 
           <nav aria-label="Primary">
             <ul className="nav-list">
@@ -92,8 +91,8 @@ export default function HomePage() {
             <div className="hello-chip">Hi, I am</div>
 
             <h1 className="hero-name">
-              <span>Sandra</span>
-              <span>Matthews</span>
+              <span>Yaxin</span>
+              <span>Zhang</span>
             </h1>
 
             <p className="hero-text">
@@ -213,7 +212,7 @@ export default function HomePage() {
               This implementation is ready for that expansion. The decorative asset system,
               typography hierarchy, and section framing are already tokenized.
             </p>
-            <a className="button button-dark" href="mailto:sandra@example.com">
+            <a className="button button-dark" href="mailto:zhangyaxin742@gmail.com">
               <span>Let&apos;s Talk</span>
               <Image src="/assets/external-link.svg" alt="" width={22} height={22} />
             </a>
