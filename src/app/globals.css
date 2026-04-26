@@ -355,12 +355,12 @@ img {
 
 .globe {
   position: absolute;
-  top: 118px;
-  left: -56px;
-  width: 136px;
+  top: 50%;
+  left: 0;
+  width: 148px;
   height: auto;
   opacity: 0.85;
-  transform: rotate(12deg);
+  transform: translate(-50%, -50%) rotate(12deg);
   transform-origin: center;
 }
 
@@ -1198,8 +1198,8 @@ img {
   }
 
   .globe {
-    top: 72px;
-    left: -36px;
+    top: 50%;
+    left: 0;
     width: 122px;
   }
 
@@ -1335,8 +1335,8 @@ img {
   .globe {
     width: 96px;
     height: auto;
-    top: 50px;
-    left: -18px;
+    top: 50%;
+    left: 0;
   }
 
   .mini-star-left {
