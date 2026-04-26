@@ -9,8 +9,7 @@ export default function ServicesSelector({ services }) {
     services.find((service) => service.id === selectedId) ?? services[0];
 
   return (
-    <section className="service-box service-selector">
-
+    <section className="service-selector">
       <div className="service-tile-grid" role="tablist" aria-label="Tutoring services">
         {services.map((service) => {
           const isActive = service.id === selectedService.id;
@@ -43,13 +42,15 @@ export default function ServicesSelector({ services }) {
         aria-labelledby={`service-tab-${selectedService.id}`}
       >
         <div className="service-spotlight-head">
-          <p className="service-spotlight-kicker">{selectedService.subtitle}</p>
           <h3>
             {selectedService.emoji} {selectedService.title}
           </h3>
           <p>{selectedService.copy}</p>
         </div>
 
+        <p className="service-session-label">
+          <strong>What a session looks like:</strong>
+        </p>
         <ul className="bullet-list">
           {selectedService.points.map((point) => (
             <li key={point}>{point}</li>

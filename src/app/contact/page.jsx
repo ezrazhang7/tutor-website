@@ -18,7 +18,7 @@ export default function ContactPage() {
         <SiteHeader className="page-header" />
 
         <div className="page-intro contact-intro">
-            <h1 className="page-title">Contact Me</h1>
+            <h1 className="page-title">Contact</h1>
         </div>
 
         <section className="contact-layout">

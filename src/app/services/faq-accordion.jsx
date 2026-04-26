@@ -21,9 +21,7 @@ export default function FaqAccordion({ faqs }) {
               id={`faq-trigger-${i}`}
             >
               <span className="faq-question">{faq.question}</span>
-              <span className="faq-arrow" aria-hidden="true">
-                {">"}
-              </span>
+              <span className="faq-arrow" aria-hidden="true" />
             </button>
 
             <div

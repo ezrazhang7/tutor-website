@@ -1,5 +1,6 @@
 const CONFIG = {
   sheetName: "Tutoring Leads",
+  spreadsheetIdProperty: "SPREADSHEET_ID",
   timezone: Session.getScriptTimeZone() || "America/New_York",
   minSubmitDelayMs: 4000,
   maxSubmitAgeMs: 1000 * 60 * 60 * 12,
@@ -45,6 +46,11 @@ function doGet() {
     service: "tutoring-contact-intake",
     message: "Use POST to submit inquiries.",
   });
+}
+
+function authorize_() {
+  getSpreadsheet_();
+  MailApp.getRemainingDailyQuota();
 }
 
 function doPost(e) {
@@ -233,7 +239,7 @@ function buildHtmlEmail_(submission) {
 }
 
 function getOrCreateSheet_() {
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const spreadsheet = getSpreadsheet_();
   let sheet = spreadsheet.getSheetByName(CONFIG.sheetName);
 
   if (!sheet) {
@@ -241,6 +247,22 @@ function getOrCreateSheet_() {
   }
 
   return sheet;
+}
+
+function getSpreadsheet_() {
+  const spreadsheetId = PropertiesService.getScriptProperties().getProperty(
+    CONFIG.spreadsheetIdProperty
+  );
+
+  if (!spreadsheetId) {
+    throw new Error(
+      "Missing script property " +
+        CONFIG.spreadsheetIdProperty +
+        ". Set it to the destination Google Sheet ID before deploying."
+    );
+  }
+
+  return SpreadsheetApp.openById(spreadsheetId);
 }
 
 function jsonResponse_(payload) {
