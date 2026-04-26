@@ -1,16 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import HomeStartupScroll from "./home-startup-scroll";
 import SiteHeader from "./site-header";
 import { pageMetadata } from "./seo";
-
-const backgroundStars = [
-  { alt: "", className: "page-star page-star-top-left", width: 138, height: 138 },
-  { alt: "", className: "page-star page-star-top-right", width: 90, height: 90 },
-  { alt: "", className: "page-star page-star-mid-right", width: 188, height: 188 },
-  { alt: "", className: "page-star page-star-bottom-left", width: 156, height: 156 },
-  { alt: "", className: "page-star page-star-bottom-mid", width: 132, height: 132 },
-  { alt: "", className: "page-star page-star-bottom-right", width: 210, height: 210 },
-];
 
 export const metadata = pageMetadata({
   title: "Arlington, MA Tutor for SAT, Math, Writing, AP, and College Essays",
@@ -22,19 +14,8 @@ export const metadata = pageMetadata({
 export default function HomePage() {
   return (
     <main className="site-shell home-shell">
+      <HomeStartupScroll targetId="about" />
       <div className="dot-grid" />
-
-      {backgroundStars.map((star) => (
-        <Image
-          key={star.className}
-          src="/assets/star.png"
-          alt={star.alt}
-          width={star.width}
-          height={star.height}
-          className={star.className}
-          priority
-        />
-      ))}
 
       <div className="top-mark">
         <Image src="/assets/top.png" alt="Yaxin Zhang mark" width={120} height={62} />
@@ -50,7 +31,7 @@ export default function HomePage() {
             </div>
 
             <h1 className="hero-name">
-              <span>Yaxin!</span>
+              <span>Yaxin</span>
               <span className="italics">(yak-sin)</span>
             </h1>
 

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import CyclingGreeting from "./cycling-greeting";
 
 const navItems = [
   { label: "About", href: "/#about" },
@@ -16,7 +17,7 @@ export default function SiteHeader({ className = "" }) {
     <header className={headerClassName}>
       <div className="header-start">
         <Link className="brand-name" href="/">
-          Yaxin Zhang
+          <CyclingGreeting />
         </Link>
       </div>
 

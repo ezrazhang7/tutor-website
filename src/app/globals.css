@@ -355,9 +355,13 @@ img {
 
 .globe {
   position: absolute;
-  top: 78px;
-  left: 34px;
+  top: 128px;
+  left: -30px;
+  width: 136px;
+  height: auto;
   opacity: 0.85;
+  transform: rotate(12deg);
+  transform-origin: center;
 }
 
 .mini-star {
@@ -1007,6 +1011,49 @@ img {
   }
 }
 
+.cycling-greeting {
+  display: inline-grid;
+  height: 1.45em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.cycling-greeting-word {
+  grid-row: 1;
+  grid-column: 1;
+  white-space: nowrap;
+}
+
+.cycling-greeting-word.is-entering {
+  animation: greeting-enter 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.cycling-greeting-word.is-exiting {
+  animation: greeting-exit 280ms ease-in both;
+}
+
+@keyframes greeting-enter {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes greeting-exit {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110%);
+    opacity: 0;
+  }
+}
+
 .faq-list {
   display: grid;
   gap: 12px;
@@ -1151,8 +1198,9 @@ img {
   }
 
   .globe {
-    top: 32px;
-    left: 10%;
+    top: 76px;
+    left: -18px;
+    width: 122px;
   }
 
   .angle-badge {
@@ -1285,9 +1333,10 @@ img {
   }
 
   .globe {
-    width: 110px;
+    width: 96px;
     height: auto;
-    left: 12px;
+    top: 54px;
+    left: -4px;
   }
 
   .mini-star-left {
