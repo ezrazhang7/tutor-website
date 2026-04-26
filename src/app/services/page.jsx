@@ -1,73 +1,98 @@
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "../site-header";
+import ServicesSelector from "./services-selector";
 
 const services = [
   {
+    id: "sat-prep",
+    emoji: "📝",
     title: "SAT Prep",
-    subtitle: "SAT Tutor | Reading and Writing + Math",
+    subtitle: "Reading, Writing, Math, and pacing strategy",
+    summary: "Best for students who need targeted score gains and a clearer plan.",
     copy:
-      "For students preparing for the SAT, I start by reviewing recent practice to find patterns in missed questions, pacing, and decision-making. Sessions stay focused on the areas that will actually move a score, with support in both Reading and Writing and Math.",
+      "SAT sessions start with recent practice so we can spot missed-question patterns, pacing issues, and strategy gaps. From there, the work stays narrow and practical: what to fix, how to practice it, and how to carry that into the next test.",
     points: [
-      "Diagnostic review of weak areas, missed-question patterns, and timing habits",
-      "Targeted SAT prep for Reading and Writing, Math, pacing, and question strategy",
-      "Practice review and study planning that students can follow between sessions",
+      "Diagnostic review of weak areas, timing habits, and recurring mistakes",
+      "Targeted prep for SAT Reading and Writing, Math, and question strategy",
+      "Between-session study plans students can actually follow",
     ],
+    ctaLabel: "Ask About SAT Prep",
   },
   {
+    id: "writing-essays",
+    emoji: "✍️",
     title: "Writing and Essay Tutoring",
-    subtitle: "Writing Tutor | English, Academic Writing, Essay Writing",
+    subtitle: "Academic writing, literary analysis, and revision",
+    summary: "Best for students who need clearer structure, stronger arguments, and cleaner drafts.",
     copy:
-      "I help students write stronger essays by making ideas easier to organize and revise. That includes thesis statements, argument structure, evidence, clarity, and editing so students can produce work that feels more confident and more readable.",
+      "Writing support focuses on making ideas easier to organize, support, and revise. That usually means stronger thesis statements, cleaner paragraph flow, better use of evidence, and drafts that sound more confident and readable.",
     points: [
-      "Support for essay writing, literary analysis, and other academic writing assignments",
-      "Clearer thesis statements, stronger structure, and smoother paragraph flow",
-      "Revision help focused on clarity, argument, and stronger final drafts",
+      "Help with essay writing, literary analysis, and academic writing assignments",
+      "Stronger thesis statements, paragraph structure, and evidence use",
+      "Revision support focused on clarity, argument, and final polish",
     ],
+    ctaLabel: "Ask About Writing Support",
   },
   {
+    id: "math-enrichment",
+    emoji: "➗",
     title: "Math Tutoring and Enrichment",
-    subtitle: "Math Tutor | Middle School Math Through Precalculus",
+    subtitle: "Middle school math through precalculus",
+    summary: "Best for students who need stronger fundamentals, confidence, or enrichment support.",
     copy:
-      "I work with students who need stronger fundamentals, extra explanation, or a way to get unstuck when a concept stops making sense. Sessions can reinforce current classwork, prepare for an upcoming class, or support enrichment programs like Kumon and RSM.",
+      "Math tutoring is for students who need clearer explanation, stronger fundamentals, or a way to get unstuck before frustration compounds. Sessions can reinforce classwork, preview upcoming material, or support outside enrichment programs.",
     points: [
-      "Middle school math and high school math support in Algebra, Geometry, and Precalculus",
-      "Step-by-step help with confusing concepts, problem-solving, and foundational skills",
+      "Support in Algebra, Geometry, and Precalculus",
+      "Step-by-step help with confusing concepts and problem-solving",
       "Enrichment support for students in Kumon, RSM, and similar programs",
     ],
+    ctaLabel: "Ask About Math Tutoring",
   },
   {
+    id: "ap-support",
+    emoji: "📚",
     title: "AP Exam and Coursework Support",
-    subtitle: "AP Tutor | APUSH, AP Lang, AP Stats, AP Calculus BC",
+    subtitle: "APUSH, AP Lang, AP Stats, AP Calculus BC, and more",
+    summary: "Best for students balancing difficult AP classes, FRQs, and exam prep.",
     copy:
-      "AP work often gets overwhelming because students need both content knowledge and a plan. I help students review core concepts, practice AP-style writing and FRQs, and build realistic cram plans for tests, quizzes, and full AP exam prep.",
+      "AP support is part content review and part planning. I help students sort out what actually matters, practice AP-style writing or FRQs where relevant, and build realistic review plans for quizzes, tests, and full exams.",
     points: [
-      "AP exam prep with concept review, targeted practice, and efficient review plans",
+      "AP exam prep with concept review and targeted practice",
       "FRQ, timed essay, and document-based writing support where relevant",
-      "Coursework help for students balancing difficult AP classes during the school year",
+      "Coursework help for students balancing difficult AP classes",
     ],
+    ctaLabel: "Ask About AP Support",
   },
   {
+    id: "college-essays",
+    emoji: "🎓",
     title: "College Essay Planning and Editing",
-    subtitle: "College Essay Tutor | Personal Statement + Supplemental Essays",
+    subtitle: "Personal statements and supplemental essays",
+    summary: "Best for rising seniors who need structure, momentum, and cleaner revisions.",
     copy:
-      "For rising seniors, I help with brainstorming, planning, drafting, and revising college application essays. The goal is to help students sound more like themselves on the page while improving structure, clarity, and follow-through.",
+      "College essay work covers brainstorming, outlining, drafting, and revision without flattening the student’s voice. The goal is a stronger essay that still sounds like the person submitting it.",
     points: [
       "Brainstorming and planning for the personal statement and supplemental essays",
-      "Editing that strengthens structure, voice, and revision without taking over the essay",
-      "College application essay help that keeps the student's own ideas and tone intact",
+      "Editing that strengthens structure, voice, and revision without taking over",
+      "Essay help that keeps the student's own ideas and tone intact",
     ],
+    ctaLabel: "Ask About College Essays",
   },
   {
+    id: "study-skills",
+    emoji: "🗂️",
     title: "Study Skills and Academic Planning",
-    subtitle: "Study Skills Tutor | Organization, Homework Help, Academic Planning",
+    subtitle: "Organization, routines, homework planning, and follow-through",
+    summary: "Best for students who feel capable but overwhelmed or disorganized.",
     copy:
-      "Some students do not need more content explanation as much as they need a better system. I help students build study routines, organize assignments, break down larger tasks, and become more independent when school starts to pile up.",
+      "Some students do not need more explanation as much as they need a workable system. This support focuses on routines, planning, task breakdown, and the habits that make school feel less chaotic.",
     points: [
       "Study skills support for organization, homework planning, and time management",
       "Executive function support for students who feel capable but overwhelmed",
       "Practical routines that make it easier to start work and stay on track",
     ],
+    ctaLabel: "Ask About Study Skills",
   },
 ];
 
@@ -163,18 +188,15 @@ export default function ServicesPage() {
         <SiteHeader className="page-header" />
 
         <div className="page-intro">
-          <p className="eyebrow">Services</p>
-          <h1 className="page-title">
-Okay, but who am I?
-          </h1>
+          <h1 className="page-title">Tutoring that meets students where they actually get stuck</h1>
           <p className="page-copy">
             I help middle and high school students build stronger skills, clearer study plans, and
             more confidence through personalized tutoring in Arlington and online.
           </p>
           <p className="page-copy">
-            Families usually reach out when they need an Arlington, MA tutor for SAT prep,
-            academic writing, math support, AP classes, or college essay help that feels personal,
-            clear, and local.
+            Most families reach out for one of six things: SAT prep, writing support, math help,
+            AP coursework, college essays, or study skills. The layout below lets you compare them
+            without forcing six oversized cards on the page.
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" href="/contact">
@@ -183,37 +205,10 @@ Okay, but who am I?
           </div>
         </div>
 
-        <section className="service-box">
-          <div className="section-heading">
-            <p className="eyebrow">Tutoring Services</p>
-            <h2>Targeted support for the work students are actually doing</h2>
-            <p>
-              Each area below has a different focus. SAT sessions center on strategy and practice
-              review, writing sessions center on clarity and revision, math sessions center on
-              fundamentals and problem-solving, and college essay work centers on planning and
-              student voice.
-            </p>
-          </div>
-
-          <div className="services-grid">
-            {services.map((service) => (
-              <article className="service-card" key={service.title}>
-                <p className="service-subtitle">{service.subtitle}</p>
-                <h3>{service.title}</h3>
-                <p>{service.copy}</p>
-                <ul className="bullet-list">
-                  {service.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
+        <ServicesSelector services={services} />
 
         <section className="service-box roomy-split">
           <div className="section-heading">
-            <p className="eyebrow">Next Step</p>
             <h2>Tell me what your student needs help with</h2>
             <p>
               If you are looking for a SAT tutor, writing tutor, math tutor, AP tutor, or college
@@ -231,7 +226,6 @@ Okay, but who am I?
         <section className="split-layout roomy-split">
           <article className="service-box">
             <div className="section-heading">
-              <p className="eyebrow">Who I Work With</p>
               <h2>Students who need clearer direction and stronger follow-through</h2>
             </div>
             <ul className="bullet-list">
@@ -243,7 +237,6 @@ Okay, but who am I?
 
           <article className="contact-box">
             <div className="section-heading">
-              <p className="eyebrow">Why Work With Me</p>
               <h2>Local, recent, and practical tutoring</h2>
             </div>
             <ul className="bullet-list">
@@ -256,7 +249,6 @@ Okay, but who am I?
 
         <section className="roomy-split">
           <div className="section-heading">
-            <p className="eyebrow">FAQ</p>
             <h2>Questions parents usually ask</h2>
           </div>
 
