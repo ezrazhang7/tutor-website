@@ -88,16 +88,15 @@ export default function HomePage() {
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <div className="hello-chip">Hi, I am</div>
+            <div className="hello-chip">Hi, I'm</div>
 
             <h1 className="hero-name">
-              <span>Yaxin</span>
-              <span>Zhang</span>
+              <span>Yaxin!</span>
             </h1>
 
             <p className="hero-text">
-              I <span className="highlight">scribble</span> on paper and help brands to
-              create designs.
+              I <span className="highlight">support </span> middle and high school students across many areas: 
+              SAT tutoring, AP exam prep, enrichment programs like Kumon/RSM, not to mention college essay drafting.
             </p>
 
             <div className="hero-actions">
@@ -107,7 +106,7 @@ export default function HomePage() {
               </a>
 
               <a className="button button-light" href="#work">
-                <span>My Story</span>
+                <span>Resume</span>
                 <Image src="/assets/external-link.svg" alt="" width={22} height={22} />
               </a>
             </div>
