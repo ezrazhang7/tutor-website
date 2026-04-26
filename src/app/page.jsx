@@ -1,38 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const navItems = [
   { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
-];
-
-const workCards = [
-  {
-    title: "Brand kits with personality",
-    label: "Identity",
-    copy:
-      "Playful mark systems, punchy social templates, and launch visuals built to feel instantly recognizable.",
-  },
-  {
-    title: "Landing pages that sell",
-    label: "Web",
-    copy:
-      "Conversion-driven pages with oversized typography, crisp hierarchy, and memorable visual hooks.",
-  },
-  {
-    title: "Illustration-led campaigns",
-    label: "Campaign",
-    copy:
-      "Character art, stickers, and graphics that turn otherwise standard product moments into something ownable.",
-  },
-];
-
-const serviceCards = [
-  "Art direction",
-  "Landing page design",
-  "Brand systems",
-  "Social campaign kits",
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const backgroundStars = [
@@ -62,10 +34,11 @@ export default function HomePage() {
       ))}
 
       <div className="top-mark">
-        <Image src="/assets/top.png" alt="top mark" width={120} height={62} />
+        <Image src="/assets/top.png" alt="Yaxin Zhang mark" width={120} height={62} />
       </div>
 
       <section className="stage-panel" id="about">
+        <h1 className="stage-title">Study Smarter</h1>
 
         <header className="stage-nav">
           <p className="brand-name">Yaxin Zhang</p>
@@ -74,41 +47,41 @@ export default function HomePage() {
             <ul className="nav-list">
               {navItems.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href}>{item.label}</a>
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
             </ul>
           </nav>
 
-          <a className="button button-dark button-small" href="#contact">
-            <span>Resume</span>
-            <Image src="/assets/download.svg" alt="" width={18} height={18} />
-          </a>
+          <Link className="button button-dark button-small" href="/contact">
+            <span>Book a Session</span>
+          </Link>
         </header>
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <div className="hello-chip">Hi, I'm</div>
+            <div className="hello-chip">Hi, I&apos;m Yaxin</div>
 
-            <h1 className="hero-name">
-              <span>Yaxin!</span>
-            </h1>
+            <h2 className="hero-name">
+              <span>Tutoring</span>
+              <span>That Clicks</span>
+            </h2>
 
             <p className="hero-text">
-              I <span className="highlight">support </span> middle and high school students across 
-              SAT tutoring, AP exam prep, Kumon/RSM enrichment learning, and college essay drafting.
+              I help students build confidence in <span className="highlight">SAT prep</span>,
+              AP classes, math, reading, and writing with calm structure and clear feedback.
             </p>
 
             <div className="hero-actions">
-              <a className="button button-dark" href="#contact">
-                <span>Hire Me</span>
+              <Link className="button button-dark" href="/services">
+                <span>See Services</span>
                 <Image src="/assets/briefcase.svg" alt="" width={22} height={22} />
-              </a>
+              </Link>
 
-              <a className="button button-light" href="#work">
-                <span>Resume</span>
+              <Link className="button button-light" href="/contact">
+                <span>Get in Touch</span>
                 <Image src="/assets/external-link.svg" alt="" width={22} height={22} />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -140,82 +113,8 @@ export default function HomePage() {
         </div>
 
         <div className="angle-badge">
-          <span>Arlington, MA</span>
+          <span>Boston + Zoom</span>
           <Image src="/assets/arrow.png" alt="" width={124} height={122} className="badge-arrow" />
-        </div>
-      </section>
-
-      <section className="info-strip" aria-label="Key metrics">
-        <article className="metric-card">
-          <p className="metric-value">08+</p>
-          <p className="metric-label">Years crafting visual systems</p>
-        </article>
-        <article className="metric-card">
-          <p className="metric-value">42</p>
-          <p className="metric-label">Launches across fashion, tech, and media</p>
-        </article>
-        <article className="metric-card">
-          <p className="metric-value">3X</p>
-          <p className="metric-label">Bolder concepts than the usual polished portfolio</p>
-        </article>
-      </section>
-
-      <section className="content-panel" id="work">
-        <div className="section-heading">
-          <p className="eyebrow">Selected Work</p>
-          <h2>Three directions from one loud visual system.</h2>
-        </div>
-
-        <div className="card-grid">
-          {workCards.map((card, index) => (
-            <article className="work-card" key={card.title}>
-              <div className="work-card-top">
-                <span className="label-pill">{card.label}</span>
-                <span className="index-pill">0{index + 1}</span>
-              </div>
-
-              <h3>{card.title}</h3>
-              <p>{card.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="content-panel split-panel" id="services">
-        <div className="section-heading">
-          <p className="eyebrow">Services</p>
-          <h2>Built with the same tokens, just rearranged for each viewport.</h2>
-        </div>
-
-        <div className="split-layout">
-          <article className="service-box">
-            <div className="service-list">
-              {serviceCards.map((service) => (
-                <span key={service} className="service-pill">
-                  {service}
-                </span>
-              ))}
-            </div>
-
-            <p>
-              The page uses a single palette, a fixed border-shadow language, and a display/body
-              type split so the desktop, tablet, and mobile layouts still feel like the same design
-              rather than resized copies.
-            </p>
-          </article>
-
-          <article className="contact-box" id="contact">
-            <p className="eyebrow">Contact</p>
-            <h3>Need the other two Figma frames wired in next?</h3>
-            <p>
-              This implementation is ready for that expansion. The decorative asset system,
-              typography hierarchy, and section framing are already tokenized.
-            </p>
-            <a className="button button-dark" href="mailto:zhangyaxin742@gmail.com">
-              <span>Let&apos;s Talk</span>
-              <Image src="/assets/external-link.svg" alt="" width={22} height={22} />
-            </a>
-          </article>
         </div>
       </section>
     </main>
