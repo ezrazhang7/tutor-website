@@ -1,14 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import CyclingGreeting from "./cycling-greeting";
+import ResumeButton from "./resume-button";
 
 const navItems = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
 ];
-
-const resumeHref = "/resume.pdf";
 
 export default function SiteHeader({ className = "" }) {
   const headerClassName = ["site-header", className].filter(Boolean).join(" ");
@@ -31,10 +29,7 @@ export default function SiteHeader({ className = "" }) {
         </ul>
       </nav>
 
-      <a className="button button-dark button-small resume-button" href={resumeHref} download>
-        <span>Resume</span>
-        <Image src="/assets/download.svg" alt="" width={18} height={18} />
-      </a>
+      <ResumeButton />
     </header>
   );
 }

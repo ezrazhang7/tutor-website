@@ -1,6 +1,23 @@
 const SCRIPT_URL =
   process.env.CONTACT_SCRIPT_URL || process.env.NEXT_PUBLIC_CONTACT_SCRIPT_URL || "";
 
+const NON_JSON_PREVIEW_LIMIT = 240;
+
+function formatNonJsonError(upstreamResponse, upstreamText) {
+  const upstreamContentType = upstreamResponse.headers.get("content-type") || "unknown";
+  const normalizedPreview = upstreamText.replace(/\s+/g, " ").trim();
+
+  return {
+    ok: false,
+    error: "Upstream contact endpoint returned a non-JSON response.",
+    upstreamStatus: upstreamResponse.status,
+    upstreamStatusText: upstreamResponse.statusText,
+    upstreamContentType,
+    upstreamUrl: upstreamResponse.url,
+    upstreamPreview: normalizedPreview.slice(0, NON_JSON_PREVIEW_LIMIT),
+  };
+}
+
 export async function POST(request) {
   if (!SCRIPT_URL) {
     return Response.json(
@@ -44,10 +61,9 @@ export async function POST(request) {
     try {
       payload = JSON.parse(upstreamText);
     } catch {
-      payload = {
-        ok: false,
-        error: "Upstream contact endpoint returned a non-JSON response.",
-      };
+      return Response.json(formatNonJsonError(upstreamResponse, upstreamText), {
+        status: 502,
+      });
     }
 
     return Response.json(payload, {
