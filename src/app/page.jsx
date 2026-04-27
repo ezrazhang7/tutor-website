@@ -3,6 +3,7 @@ import Link from "next/link";
 import HomeStartupScroll from "./home-startup-scroll";
 import SiteHeader from "./site-header";
 import { pageMetadata } from "./seo";
+import { getApprovedTestimonials } from "../lib/testimonials";
 
 export const metadata = pageMetadata({
   title: "Arlington, MA Tutor for SAT, Math, Writing, AP, and College Essays",
@@ -11,7 +12,58 @@ export const metadata = pageMetadata({
   path: "/",
 });
 
-export default function HomePage() {
+const FILLED_STAR = String.fromCharCode(9733);
+const EMPTY_STAR = String.fromCharCode(9734);
+
+function renderStars(rating) {
+  return `${FILLED_STAR.repeat(rating)}${EMPTY_STAR.repeat(5 - rating)}`;
+}
+
+function TestimonialsSection({ testimonials }) {
+  if (!testimonials.length) {
+    return null;
+  }
+
+  return (
+    <section className="testimonials-section" aria-labelledby="testimonials-heading">
+      <div className="section-heading compact-section-heading testimonials-heading">
+        <p className="eyebrow">Family Feedback</p>
+        <h2 id="testimonials-heading">What families say after working together</h2>
+        <p className="page-copy testimonials-copy">
+          A few recent notes from approved parent testimonials.
+        </p>
+      </div>
+
+      <div className="testimonial-grid">
+        {testimonials.map((testimonial) => (
+          <article className="testimonial-card" key={testimonial.id}>
+            <p
+              className="testimonial-stars"
+              aria-label={`Rated ${testimonial.rating} out of 5 stars`}
+            >
+              {renderStars(testimonial.rating)}
+            </p>
+            <blockquote className="testimonial-quote">
+              <p>{testimonial.quote}</p>
+            </blockquote>
+            <p className="testimonial-attribution">{testimonial.attribution}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="testimonial-actions">
+        <Link className="button button-light" href="/contact">
+          <span>Start a Conversation</span>
+          <Image src="/assets/external-link.svg" alt="" width={22} height={22} />
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+export default async function HomePage() {
+  const approvedTestimonials = await getApprovedTestimonials();
+
   return (
     <main className="site-shell home-shell">
       <HomeStartupScroll targetId="about" />
@@ -80,6 +132,8 @@ export default function HomePage() {
             />
           </div>
         </div>
+
+        <TestimonialsSection testimonials={approvedTestimonials} />
       </section>
     </main>
   );
