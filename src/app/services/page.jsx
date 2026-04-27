@@ -102,7 +102,7 @@ const faqs = [
   {
     question: "Who are you, and why would my kid click with you?",
     answer:
-      "I'm Yaxin (pronounced yak-sin). I grew up in Arlington, am graduating from Arlington High School, and I'm headed to UNC Chapel Hill to study Economics and Public Policy. I have 300+ hours of tutoring experience, a 1560 SAT, and 5s on AP Statistics, AP Calculus BC, APUSH, and AP Lang. Most importantly, I'm not far removed from high school, so I know what the workload actually feels like.",
+      "I'm Yaxin (pronounced yak-sin). I grew up in Arlington, am graduating from Arlington High School, and I'm headed to UNC Chapel Hill to study Economics and Public Policy. I have 300+ hours of tutoring experience, a 1560 SAT, and 5s on AP Statistics, AP Calculus BC, APUSH, and AP Lang. Most importantly, I'm not far removed from high school, so I know what the workload actually feels like :D",
   },
   {
     question: "What subjects do you cover?",

@@ -178,9 +178,9 @@ img {
 }
 
 .site-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
 }
 
@@ -192,8 +192,12 @@ img {
 
 .site-header nav {
   display: flex;
-  flex: 1 1 auto;
   justify-content: center;
+  grid-column: 2;
+}
+
+.site-header > .resume-button {
+  justify-self: end;
 }
 
 .brand-name {
@@ -1170,10 +1174,12 @@ img {
   }
 
   .site-header {
+    display: flex;
     flex-wrap: wrap;
   }
 
   .site-header nav {
+    flex: 1 1 100%;
     justify-content: flex-start;
   }
 
