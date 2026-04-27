@@ -15,8 +15,8 @@ const SUBJECT_OPTIONS = [
   "Other (please specify)",
 ];
 
-const SCRIPT_URL = process.env.NEXT_PUBLIC_CONTACT_SCRIPT_URL || "";
 const FORM_VERSION = "v3";
+const CONTACT_ENDPOINT = "/api/contact";
 
 export default function ContactForm() {
   const formRef = useRef(null);
@@ -31,12 +31,6 @@ export default function ContactForm() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    if (!SCRIPT_URL) {
-      setStatus("error");
-      setMessage("Contact form endpoint is not configured yet.");
-      return;
-    }
-
     const form = formRef.current;
     const formData = new FormData(form);
     formData.set("formStartedAt", String(startTimeRef.current));
@@ -47,12 +41,13 @@ export default function ContactForm() {
     setMessage("Sending your inquiry...");
 
     try {
-      const response = await fetch(SCRIPT_URL, {
+      const response = await fetch(CONTACT_ENDPOINT, {
         method: "POST",
         headers: {
           Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
         },
-        body: new URLSearchParams(formData),
+        body: new URLSearchParams(formData).toString(),
       });
 
       const payload = await response.json().catch(() => null);
