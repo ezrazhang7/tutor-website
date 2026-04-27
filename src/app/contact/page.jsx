@@ -43,7 +43,7 @@ export default function ContactPage() {
             <div className="mini-card">
               <h3>Rate and policies</h3>
               <p>
-                Sessions are $50/hour. Please give 24 hours&apos; notice for cancellations or
+                Sessions are $40/hour. Please give 24 hours&apos; notice for cancellations or
                 reschedules when possible.
               </p>
             </div>

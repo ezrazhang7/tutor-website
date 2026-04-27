@@ -122,7 +122,7 @@ const faqs = [
   {
     question: "What are your rates, and how do families get started?",
     answer:
-      "Sessions are $50 per hour. Fill out the contact form with your student's grade level, subject, and goals, or book a free intro call if talking first is easier. I'm happy to answer questions, talk through fit, and figure out the right next step.",
+      "Sessions are $40 per hour. Fill out the contact form with your student's grade level, subject, and goals, or book a free intro call if talking first is easier. I'm happy to answer questions, talk through fit, and figure out the right next step.",
   },
 ];
 
