@@ -6,3 +6,7 @@ npm-debug.log*
 .env.local
 .env.*
 !.env.example
+
+# dev artifacts
+*.log
+.playwright-mcp/
